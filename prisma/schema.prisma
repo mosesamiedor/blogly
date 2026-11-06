@@ -46,7 +46,7 @@ model User {
   name      String
   username  String   @unique
   email     String   @unique
-  password  String
+  passwordHash  String
   role      Role     @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
