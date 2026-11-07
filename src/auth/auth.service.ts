@@ -4,14 +4,12 @@ import { UserService } from '../user/user.service.js';
 import { JwtService } from '@nestjs/jwt';
 import { UserModel } from '../generated/prisma/models/User.js';
 import { CreateUserDto } from '../dto/createUserDto.js';
-import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
-    private readonly configService: ConfigService,
   ) {}
 
   async registerUser(createUserDto: CreateUserDto) {
@@ -44,10 +42,11 @@ export class AuthService {
       sub: user.id,
       email: user.email,
       username: user.username,
+      role: user.role,
     };
 
     return this.jwtService.signAsync(payload, {
-      secret: this.configService.get<string>('JWT_SECRET'),
+      secret: process.env.JWT_SECRET,
     });
   }
 }
