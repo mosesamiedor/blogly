@@ -5,16 +5,11 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../services/prisma/prisma.service.js';
 import { CreateNewBlogDto, UpdateBlogDto } from '../dto/blogDto.js';
-import { User } from '../generated/prisma/client.js';
-import { UserService } from '../user/user.service.js';
 import { VerifiedUser } from '../types.js';
 
 @Injectable()
 export class BlogService {
-  constructor(
-    private readonly prisma: PrismaService,
-    private readonly userService: UserService,
-  ) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   async createNewBlog(createNewBlogDto: CreateNewBlogDto, userId: string) {
     const blog = await this.prisma.blog.create({
