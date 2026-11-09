@@ -6,6 +6,7 @@ import { AppService } from './app.service.js';
 import { UserModule } from './user/user.module.js';
 import { AuthModule } from './auth/auth.module.js';
 import { BlogModule } from './blog/blog.module.js';
+import { CommentModule } from './comment/comment.module.js';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { BlogModule } from './blog/blog.module.js';
       inject: [ConfigService],
     }),
     BlogModule,
+    CommentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
