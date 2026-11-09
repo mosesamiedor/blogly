@@ -52,7 +52,7 @@ export class BlogService {
       (user.role === 'USER' && user.sub === blog.userId)
     ) {
       const updatedBlog = await this.prisma.blog.update({
-        where: { userId: user.sub, id: blog.id },
+        where: { id: blog.id },
         data: updateBlogDto,
       });
 
