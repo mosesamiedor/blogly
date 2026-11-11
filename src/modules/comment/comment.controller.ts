@@ -11,12 +11,12 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { CommentService } from './comment.service.js';
-import { JWTAuthGuard } from '../guards/auth.guard.js';
-import { CommentDto, CreateCommentDto } from '../dto/commentDto.js';
-import { CurrentUser } from '../decorators/user.decorator.js';
-import { UserRoles, type VerifiedUser } from '../types.js';
-import { Roles } from '../decorators/roles.decorator.js';
-import { RolesGuard } from '../guards/role.guard.js';
+import { JWTAuthGuard } from '../../guards/auth.guard.js';
+import { CommentDto, CreateCommentDto } from '../../dto/commentDto.js';
+import { CurrentUser } from '../../decorators/user.decorator.js';
+import { UserRoles, type VerifiedUser } from '../../types.js';
+import { Roles } from '../../decorators/roles.decorator.js';
+import { RolesGuard } from '../../guards/role.guard.js';
 
 @Controller('comment')
 export class CommentController {

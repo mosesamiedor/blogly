@@ -10,14 +10,14 @@ import {
   UseGuards,
   ValidationPipe,
 } from '@nestjs/common';
-import { JWTAuthGuard } from '../guards/auth.guard.js';
-import { RolesGuard } from '../guards/role.guard.js';
-import { Roles } from '../decorators/roles.decorator.js';
-import type { VerifiedUser } from '../types.js';
-import { UserRoles } from '../types.js';
-import { CurrentUser } from '../decorators/user.decorator.js';
+import { JWTAuthGuard } from '../../guards/auth.guard.js';
+import { RolesGuard } from '../../guards/role.guard.js';
+import { Roles } from '../../decorators/roles.decorator.js';
+import type { VerifiedUser } from '../../types.js';
+import { UserRoles } from '../../types.js';
+import { CurrentUser } from '../../decorators/user.decorator.js';
 import { BlogService } from './blog.service.js';
-import { CreateNewBlogDto, UpdateBlogDto } from '../dto/blogDto.js';
+import { CreateNewBlogDto, UpdateBlogDto } from '../../dto/blogDto.js';
 
 @Controller('blog')
 export class BlogController {

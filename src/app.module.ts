@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
-import { UserModule } from './user/user.module.js';
-import { AuthModule } from './auth/auth.module.js';
-import { BlogModule } from './blog/blog.module.js';
-import { CommentModule } from './comment/comment.module.js';
+import { UserModule } from './modules/user/user.module.js';
+import { AuthModule } from './modules/auth/auth.module.js';
+import { BlogModule } from './modules/blog/blog.module.js';
+import { CommentModule } from './modules/comment/comment.module.js';
 
 @Module({
   imports: [
@@ -25,7 +23,5 @@ import { CommentModule } from './comment/comment.module.js';
     BlogModule,
     CommentModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
