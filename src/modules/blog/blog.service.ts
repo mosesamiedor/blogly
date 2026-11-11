@@ -3,9 +3,9 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { PrismaService } from '../services/prisma/prisma.service.js';
-import { CreateNewBlogDto, UpdateBlogDto } from '../dto/blogDto.js';
-import { VerifiedUser } from '../types.js';
+import { PrismaService } from '../../services/prisma/prisma.service.js';
+import { CreateNewBlogDto, UpdateBlogDto } from '../../dto/blogDto.js';
+import { VerifiedUser } from '../../types.js';
 
 @Injectable()
 export class BlogService {

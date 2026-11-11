@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { LoginUserDto } from '../dto/authUserDto.js';
+import { LoginUserDto } from '../../dto/authUserDto.js';
 import { UserService } from '../user/user.service.js';
 import { JwtService } from '@nestjs/jwt';
-import { UserModel } from '../generated/prisma/models/User.js';
-import { CreateUserDto } from '../dto/createUserDto.js';
+import { UserModel } from '../../generated/prisma/models/User.js';
+import { CreateUserDto } from '../../dto/createUserDto.js';
 
 @Injectable()
 export class AuthService {

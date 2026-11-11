@@ -3,9 +3,9 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { PrismaService } from '../services/prisma/prisma.service.js';
-import { VerifiedUser } from '../types.js';
-import { CommentDto, CreateCommentDto } from '../dto/commentDto.js';
+import { PrismaService } from '../../services/prisma/prisma.service.js';
+import { VerifiedUser } from '../../types.js';
+import { CommentDto, CreateCommentDto } from '../../dto/commentDto.js';
 
 interface CommentArgs {
   user: VerifiedUser;
